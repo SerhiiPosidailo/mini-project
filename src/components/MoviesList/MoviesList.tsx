@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {MoviesService} from "../../service/MoviesService";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import {IMovies} from "../../interfaces/interface";
 
 
 const MoviesList = () => {
-    const [movies, setMovies] = useState([])
+    const [movies, setMovies] = useState<IMovies[]>([])
 
 
     useEffect(() => {
@@ -13,7 +14,7 @@ const MoviesList = () => {
 
     return (
         <div>
-            {/*{movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}*/}
+            {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
         </div>
     );
 };

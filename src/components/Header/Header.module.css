@@ -1,6 +1,22 @@
 .Header {
-    height: 60px;
-    background-color: #000;
+    height: 100px;
+    background-color: #363636;
     width: 100%;
+    color: snow;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+}
+
+.Navigate {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    /*font-size: 30px;*/
+}
+
+.Navigate a{
+    text-decoration: none;
     color: snow;
 }

@@ -1,5 +1,12 @@
 import css from "./MoviesListCard.module.css"
-const MoviesListCard = ({movie}:any) => {
+import {IMovie} from "../../interfaces/interfaceMovies";
+import {FC} from "react";
+
+interface IProps {
+    movie:IMovie
+}
+
+const MoviesListCard: FC<IProps> = ({movie}:any) => {
     const {id, title, poster_path, overview, vote_average} = movie;
 
     return (

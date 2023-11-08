@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {IGenre} from "../../../interfaces/interfaceGanre";
-import {axiosService} from "../../../service/axiosService";
 import {genresService} from "../../../service/genresService";
 import {Genre} from "../Genre/Genre";
 

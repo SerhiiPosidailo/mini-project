@@ -13,7 +13,6 @@ const MoviesList = () => {
 
     const pageQuery = query.get('page') || '1'
 
-
     useEffect(() => {
         moviesService.getAll(pageQuery).then(({data})=>{
             setMovies(data.results)

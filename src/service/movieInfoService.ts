@@ -1,10 +1,10 @@
 import {IRes} from "../types/IResType";
-import {IMovies} from "../interfaces/interfaceMovies";
 import {axiosService} from "./axiosService";
 import {urls} from "../constants/urls";
+import {IMovie} from "../interfaces/interfaceMovies";
 
 const movieInfoService = {
-    getById:(id:string):IRes<IMovies> => axiosService.get(urls.byId(id))
+    getById: (id:string):IRes<IMovie> => axiosService.get(urls.byId(id))
 }
 
 

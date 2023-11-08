@@ -9,7 +9,7 @@ const Header = () => {
             <div className={css.Navigate}>
                 <NavLink to={'movies'}>Movies</NavLink>
                 <NavLink to={'genres'}>Genres</NavLink>
-                <NavLink to={'search'}>Search</NavLink>
+                <NavLink to={'movies/search'}>Search</NavLink>
             </div>
             <div>asdasd</div>
         </div>

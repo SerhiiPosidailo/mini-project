@@ -1,5 +1,7 @@
 import React, {FC} from 'react';
 import {IGenre} from "../../../interfaces/interfaceGanre";
+import css from "./Genre.module.css"
+import {NavLink} from "react-router-dom";
 
 interface IProps {
     genre:IGenre
@@ -8,8 +10,10 @@ interface IProps {
 const Genre:FC<IProps> = ({genre}) => {
     const {name} = genre;
     return (
-        <div>
-            <div>{name}</div>
+        <div className={css.Genre}>
+            <div>
+                <NavLink to={''}>{name}</NavLink>
+            </div>
         </div>
     );
 };

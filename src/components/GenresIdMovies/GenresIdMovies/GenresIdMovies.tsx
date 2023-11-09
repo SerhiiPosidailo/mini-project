@@ -8,7 +8,7 @@ import css from "./GenresIdMovies.module.css"
 
 const GenresIdMovies = () => {
 
-    const {id, page} = useParams();
+    const {id} = useParams();
 
     const [movieIdGenres, setMovieIdGenres] = useState<IMovie[]>([])
 
@@ -23,7 +23,7 @@ const GenresIdMovies = () => {
             setMovieIdGenres(data.results)
             setTotalPages(data.total_pages)
         })
-    }, [totalPages,pageQuery]);
+    }, [id,totalPages,pageQuery]);
 
     const pagePrev = ():void => {
         setQuery(prev => {

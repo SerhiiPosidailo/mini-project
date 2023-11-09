@@ -4,7 +4,7 @@ import {urls} from "../constants/urls";
 import {IMovie} from "../interfaces/interfaceMovies";
 
 const movieInfoService = {
-    getById: (id:string):IRes<IMovie> => axiosService.get(urls.byId(id))
+    getById: (id:string):IRes<IMovie> => axiosService.get(urls.byId(id)),
 }
 
 

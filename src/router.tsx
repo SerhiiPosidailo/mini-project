@@ -5,6 +5,7 @@ import {GenresPage} from "./pages/GenrePage/GenresPage";
 import {MovieInfoPage} from "./pages/MovieInfoPage/MovieInfoPage";
 import {SearchPage} from "./pages/SearchPage/SearchPage";
 import React from "react";
+import {GenresIdPage} from "./pages/GenresIdPage/GenresIdPage";
 
 const router = createBrowserRouter([
     {path:'', element:<MainLayout/>, children:[
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
                 ]},
             {path:'/movies/:id', element:<MovieInfoPage/>},
             {path:'genres', element:<GenresPage/>},
+            {path: '/genres/:id', element: <GenresIdPage/>}
 
 
         ]}

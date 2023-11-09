@@ -1,4 +1,4 @@
-.MoviesList {
+.GenresIdMovie {
     display: flex;
     flex-flow: row wrap;
 }

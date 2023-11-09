@@ -19,8 +19,13 @@
 .Navigate a{
     text-decoration: none;
     color: snow;
+    transition: .5s;
 }
 
-.Navigate a[class=active]{
+
+.Navigate a:hover{
+    font-size: 27px;
     color: yellow;
+    transition: .8s;
 }
+

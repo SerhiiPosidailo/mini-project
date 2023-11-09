@@ -4,7 +4,7 @@ import {urls} from "../constants/urls";
 import {IGenre, IGenres} from "../interfaces/interfaceGanre";
 
 const genresService ={
-    getAll:():IRes<IGenres<IGenre>> => axiosService.get(urls.genre)
+    getAll:():IRes<IGenres<IGenre>> => axiosService.get(urls.genre),
 }
 
 

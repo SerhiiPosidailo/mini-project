@@ -6,12 +6,14 @@ const search = '/search/keyword';
 const character = '/movie';
 
 
+
 const urls = {
     movies,
     genre,
     byId: (id: string): string => `/movie/${id}`,
     poster: (key: string)=> `${poster}/${key}`,
     search,
-    character:(id: number) => `${character}/${id}/credits`
+    character:(id: number) => `${character}/${id}/credits`,
+    genreIdMovies: (id:string) => `/genre/${id}/movies`
 }
 export {baseURL,urls};

@@ -9,8 +9,9 @@ interface IProps {
 
 const MoviesListCard: FC<IProps> = ({movie}:any) => {
 
-    const {id, title, poster_path, vote_average} = movie;
+    const {title, poster_path, vote_average} = movie;
     const navigate = useNavigate();
+
 
     return (
         <div className={css.MoviesListCard} onClick={()=>navigate(`${movie.id}`, {state:movie})}>

@@ -1,0 +1,11 @@
+.MovieInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: silver;
+}
+
+.MovieInfo p{
+    width: 35%;
+}

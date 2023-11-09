@@ -16,7 +16,7 @@ const GenresIdMovie:FC<IProps> = ({movieIdGenre}) => {
         <div className={css.GenresIdMovie} onClick={()=>navigate(`/movies/${movieIdGenre.id}`)}>
             <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={original_title}/>
             <div>{vote_average}</div>
-            <div>{original_title}</div>
+            <h3>{original_title}</h3>
         </div>
     );
 };

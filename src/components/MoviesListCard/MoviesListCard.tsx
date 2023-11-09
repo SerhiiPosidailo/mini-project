@@ -17,7 +17,7 @@ const MoviesListCard: FC<IProps> = ({movie}:any) => {
         <div className={css.MoviesListCard} onClick={()=>navigate(`${movie.id}`, {state:movie})}>
             <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title}/>
             <div>{vote_average}</div>
-            <p>{title}</p>
+            <h3>{title}</h3>
         </div>
     );
 };

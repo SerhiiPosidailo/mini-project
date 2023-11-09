@@ -17,8 +17,9 @@ const Header = () => {
             <div>
                 <input type="checkbox" />
             </div>
-            <div>
-                asdasd
+            <div className={css.Img}>
+                <img src="https://ru.legacy.reactjs.org/logo-og.png" alt="React"/>
+                <p>asdasd</p>
             </div>
         </div>
     );

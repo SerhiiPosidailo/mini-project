@@ -1,7 +1,9 @@
 import css from "./MoviesListCard.module.css"
 import {IMovie} from "../../interfaces/interfaceMovies";
-import {FC} from "react";
+import React, {FC} from "react";
 import {useNavigate} from "react-router-dom";
+import {Rating} from 'react-simple-star-rating'
+
 
 interface IProps {
     movie:IMovie
@@ -16,7 +18,17 @@ const MoviesListCard: FC<IProps> = ({movie}:any) => {
     return (
         <div className={css.MoviesListCard} onClick={()=>navigate(`${movie.id}`, {state:movie})}>
             <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title}/>
-            <div>{vote_average}</div>
+            <div className={css.rating}>
+            <Rating
+                iconsCount={10}
+                size={15}
+                initialValue={vote_average}
+                readonly={true}
+                allowFraction={true}
+                emptyColor={'#808080FF'}
+            />
+            </div>
+
             <h3>{title}</h3>
         </div>
     );

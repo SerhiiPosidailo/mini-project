@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {IMovie} from "../../../interfaces/interfaceMovies";
 import css from "./GenresIdMovie.module.css"
 import {useNavigate} from "react-router-dom";
+import {Rating} from 'react-simple-star-rating'
 
 interface IProps {
     movieIdGenre:IMovie
@@ -15,7 +16,16 @@ const GenresIdMovie:FC<IProps> = ({movieIdGenre}) => {
     return (
         <div className={css.GenresIdMovie} onClick={()=>navigate(`/movies/${movieIdGenre.id}`)}>
             <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={original_title}/>
-            <div>{vote_average}</div>
+            <div className={css.rating}>
+                <Rating
+                    iconsCount={10}
+                    size={15}
+                    initialValue={vote_average}
+                    readonly={true}
+                    allowFraction={true}
+                    emptyColor={'#808080FF'}
+                />
+            </div>
             <h3>{original_title}</h3>
         </div>
     );

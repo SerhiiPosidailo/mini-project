@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 import {IMovie} from "../../../interfaces/interfaceMovies";
 import css from "./MovieInfo.module.css"
+import {Rating} from "react-simple-star-rating";
+
 
 
 interface IProps {
@@ -15,9 +17,17 @@ const MovieInfo:FC<IProps> = ({movieinfo}) => {
             <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title}/>
             <h1>{title}</h1>
             <p>{overview}</p>
-            <div><h1>Rating :</h1>{vote_average}</div>
-            <div><h1>Release Data :</h1>{release_date}</div>
-            <div>{genre_ids}</div>
+            <div><h1>Rating :</h1></div>
+            <Rating
+                iconsCount={10}
+                size={40}
+                initialValue={vote_average}
+                readonly={true}
+                allowFraction={true}
+                SVGstrokeColor={'black'}
+                emptyColor={'#808080FF'}
+            />
+            <div><h1>Release Data :</h1><b>{release_date}</b></div>
         </div>
     );
 };

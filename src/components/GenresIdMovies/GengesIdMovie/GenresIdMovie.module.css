@@ -21,3 +21,7 @@
 .GenresIdMovie h3{
     text-align: center;
 }
+
+.rating {
+    margin-top: 10px;
+}

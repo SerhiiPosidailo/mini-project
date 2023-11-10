@@ -14,10 +14,11 @@ const Header = () => {
                 <NavLink to={'genres'}>Genres</NavLink>
                 <NavLink to={'movies/search'}>Search</NavLink>
             </div>
-            <div>
-                <input type="checkbox" />
-            </div>
+
             <div className={css.Img}>
+                <div>
+                    <input type="checkbox" />
+                </div>
                 <img src="https://ru.legacy.reactjs.org/logo-og.png" alt="React"/>
                 <p>asdasd</p>
             </div>

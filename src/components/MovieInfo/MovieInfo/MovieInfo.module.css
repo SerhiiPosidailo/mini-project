@@ -5,7 +5,16 @@
     flex-direction: column;
     background-color: silver;
 }
+.MovieInfo img {
+    margin-top: 10px;
+    border-radius: 25px;
+}
 
 .MovieInfo p{
     width: 35%;
+}
+
+.MovieInfo b {
+    margin-left: 40px;
+    font-size: 20px;
 }

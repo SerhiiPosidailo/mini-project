@@ -1,0 +1,20 @@
+.Searches {
+    display: flex;
+    flex-flow: wrap row;
+}
+
+.form {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form input{
+    width: 17vw;
+    box-shadow: black 5px 5px 5px;
+}
+.form button{
+    width: 5vw;
+    margin-left: 5px;
+    box-shadow: black 5px 5px 5px;
+    border-radius: 25px;
+}

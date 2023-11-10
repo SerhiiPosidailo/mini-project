@@ -1,24 +1,38 @@
-import React from 'react';
-import {useForm} from "react-hook-form";
-import {axiosService} from "../../../service/axiosService";
-import {urls} from "../../../constants/urls";
-import {useSearchParams} from "react-router-dom";
+import React, {useState} from 'react';
+import {moviesService} from "../../../service/moviesService";
+import {IMovie} from "../../../interfaces/interfaceMovies";
+import {Search} from "./Search";
+import css from "./Searchs.module.css"
 
-const Searchs = () => {
-    
-    const {handleSubmit,reset} = useForm();
-    const [query, setQuery] = useSearchParams({qury: '1'});
 
-    const click = async () => {
-           const {data} = await axiosService.get(urls.search)
-        console.log(data)
+const Searchs:React.FC = () => {
+
+    const [searchTerm, setSearchTerm] = useState<string>('')
+    const [moviesSort, setMoviesSort] = useState<IMovie[]>([])
+
+
+
+    const hendleInput = (e:React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value)
+
     }
 
+    const handleSearch = async () => {
+        await moviesService.getMoviesQuery(searchTerm).then(({data})=> setMoviesSort(data.results))
+    }
+
+
     return (
-        <form onSubmit={handleSubmit(click)}>
-            <input type="text" name="text" id="text"/>
-            <button>go</button>
-        </form>
+        <>
+            <div className={css.Searches}>
+                {moviesSort.map(movieSort => <Search movieSort={movieSort} key={movieSort.id}/>)}
+            </div>
+            <div className={css.form}>
+                <input type="text" onChange={hendleInput}/>
+                <button onClick={handleSearch} >ok</button>
+            </div>
+        </>
+
     );
 };
 

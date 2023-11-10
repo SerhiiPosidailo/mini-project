@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const MovieInfo:FC<IProps> = ({movieinfo}) => {
-    const {poster_path,overview,title,vote_average,release_date,genre_ids} = movieinfo;
+    const {poster_path,overview,title,vote_average,release_date,} = movieinfo;
 
     return (
         <div className={css.MovieInfo}>

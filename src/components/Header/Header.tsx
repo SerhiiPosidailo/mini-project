@@ -12,7 +12,7 @@ const Header = () => {
             <div className={css.Navigate}>
                 <NavLink to={'movies'}>Movies</NavLink>
                 <NavLink to={'genres'}>Genres</NavLink>
-                <NavLink to={'movies/search'}>Search</NavLink>
+                <NavLink to={'search'}>Search</NavLink>
             </div>
 
             <div className={css.Img}>
@@ -20,7 +20,7 @@ const Header = () => {
                     <input type="checkbox" />
                 </div>
                 <img src="https://ru.legacy.reactjs.org/logo-og.png" alt="React"/>
-                <p>asdasd</p>
+                <p>user</p>
             </div>
         </div>
     );

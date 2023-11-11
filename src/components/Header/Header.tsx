@@ -1,16 +1,28 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 
 import css from "./Header.module.css"
 
+interface ThemeState {
+    isDark: boolean;
+}
 
 const Header:React.FC = () => {
 
-    const [isDarkMode, setDarkMode] = useState(false);
-
-    const toggleMode = () => {
-        setDarkMode((prevMode) => !prevMode);
+    const initialThemeState: ThemeState = {
+        isDark: localStorage.getItem('theme') === 'dark',
     };
+    const [theme, setTheme] = useState<ThemeState>(initialThemeState);
+
+    const toggleTheme = () => {
+        const newThemeState: ThemeState = { isDark: !theme.isDark };
+        setTheme(newThemeState);
+        localStorage.setItem('theme', newThemeState.isDark ? 'dark' : 'light');
+    };
+
+    useEffect(() => {
+        document.body.className = theme.isDark ? 'dark-theme' : 'light-theme';
+    }, [theme]);
 
     return (
 
@@ -22,8 +34,12 @@ const Header:React.FC = () => {
                 <NavLink to={'search'}>Search</NavLink>
             </div>
             <div className={css.User}>
-                <div className={`dark-mode-switch ${isDarkMode ? 'dark-mode' : 'light-mode'}`} >
-                    <input type="checkbox" checked={isDarkMode} onChange={toggleMode}/>
+                <div className={`header ${theme.isDark ? 'dark-theme' : 'light-theme'}`}>
+                        <input
+                            type="checkbox"
+                            checked={theme.isDark}
+                            onChange={toggleTheme}
+                        />
                 </div>
                 <div className={css.Img}>
                 <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="React"/>

@@ -1,8 +1,9 @@
 import React, {FC} from 'react';
-import {IMovie} from "../../../interfaces/interfaceMovies";
-import css from "./GenresIdMovie.module.css"
 import {useNavigate} from "react-router-dom";
 import {Rating} from 'react-simple-star-rating'
+
+import {IMovie} from "../../../interfaces/interfaceMovies";
+import css from "./GenresIdMovie.module.css"
 
 interface IProps {
     movieIdGenre:IMovie

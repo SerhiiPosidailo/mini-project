@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, useSearchParams} from "react-router-dom";
+
 import {IMovie} from "../../../interfaces/interfaceMovies";
 import {moviesService} from "../../../service/moviesService";
 import {GenresIdMovie} from "../GengesIdMovie/GenresIdMovie";

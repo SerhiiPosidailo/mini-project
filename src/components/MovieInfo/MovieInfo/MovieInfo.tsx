@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {IMovie} from "../../../interfaces/interfaceMovies";
-import css from "./MovieInfo.module.css"
 import {Rating} from "react-simple-star-rating";
 
+import {IMovie} from "../../../interfaces/interfaceMovies";
+import css from "./MovieInfo.module.css"
 
 
 interface IProps {

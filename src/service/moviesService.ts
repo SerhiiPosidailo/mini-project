@@ -7,7 +7,7 @@ const moviesService = {
     getAll:(page:string):IRes<IMovies> => axiosService.get(urls.movies, {params:{page}}),
     getMovieById:(id:string, page:string):IRes<IMovies> => axiosService.get(urls.genreIdMovies(id), {params:{page}}),
 
-    getMoviesQuery:(key:string):IRes<IMovies> => axiosService.get(urls.search(key))
+    getMoviesQuery:(key:string, page:string):IRes<IMovies> => axiosService.get(urls.search(key), {params:{page}})
 
 }
 

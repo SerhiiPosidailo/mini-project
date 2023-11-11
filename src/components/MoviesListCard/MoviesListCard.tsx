@@ -1,8 +1,9 @@
+import React, {FC} from "react";
+import {Rating} from 'react-simple-star-rating'
+import {useNavigate} from "react-router-dom";
+
 import css from "./MoviesListCard.module.css"
 import {IMovie} from "../../interfaces/interfaceMovies";
-import React, {FC} from "react";
-import {useNavigate} from "react-router-dom";
-import {Rating} from 'react-simple-star-rating'
 
 
 interface IProps {

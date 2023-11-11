@@ -1,9 +1,16 @@
-import React from 'react';
-import css from "./Header.module.css"
+import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 
-const Header = () => {
+import css from "./Header.module.css"
 
+
+const Header:React.FC = () => {
+
+    const [isDarkMode, setDarkMode] = useState(false);
+
+    const toggleMode = () => {
+        setDarkMode((prevMode) => !prevMode);
+    };
 
     return (
 
@@ -14,13 +21,14 @@ const Header = () => {
                 <NavLink to={'genres'}>Genres</NavLink>
                 <NavLink to={'search'}>Search</NavLink>
             </div>
-
-            <div className={css.Img}>
-                <div>
-                    <input type="checkbox" />
+            <div className={css.User}>
+                <div className={`dark-mode-switch ${isDarkMode ? 'dark-mode' : 'light-mode'}`} >
+                    <input type="checkbox" checked={isDarkMode} onChange={toggleMode}/>
                 </div>
-                <img src="https://ru.legacy.reactjs.org/logo-og.png" alt="React"/>
+                <div className={css.Img}>
+                <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="React"/>
                 <p>user</p>
+                </div>
             </div>
         </div>
     );

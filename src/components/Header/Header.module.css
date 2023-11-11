@@ -11,6 +11,7 @@ body{
     justify-content: space-around;
     align-items: center;
     font-size: 25px;
+    text-shadow: 2px 2px 2px;
 }
 
 .Navigate {
@@ -33,11 +34,18 @@ body{
     transition: .8s;
 }
 
+.User {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .Img {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 15vw;
+    flex-direction: column;
 }
 
 .Img img{
@@ -49,4 +57,22 @@ body{
 .Img p {
     margin: 0;
 }
+
+
+body> .dark-theme {
+    background: #333;
+    color: #fff;
+}
+
+body .light-theme {
+    background: #fff;
+    color: #333;
+}
+
+
+
+
+
+
+
 

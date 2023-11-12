@@ -35,11 +35,14 @@ const Header:React.FC = () => {
             </div>
             <div className={css.User}>
                 <div className={`header ${theme.isDark ? 'dark-theme' : 'light-theme'}`}>
+                    <label className={css.switch}>
                         <input
                             type="checkbox"
                             checked={theme.isDark}
                             onChange={toggleTheme}
                         />
+                        <span className={css.slider}></span>
+                    </label>
                 </div>
                 <div className={css.Img}>
                 <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="React"/>

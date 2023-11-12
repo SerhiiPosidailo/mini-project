@@ -15,13 +15,13 @@ const Searchs = () => {
 
     const pageQuery: string  = params.get('page') || '1';
     const query: string = params.get('query') || '';
-    const allPages:number = 500
+
 
     const searchMovies = (queryParam:string, pageParam: string) => {
         moviesService.getMoviesQuery(queryParam, pageParam)
             .then(({ data }) => {
                 setMovies(data.results);
-                setTotalPages(data.page);
+                setTotalPages(data.total_pages);
             });
     };
 
@@ -73,9 +73,9 @@ const Searchs = () => {
                 {movies.map(movie => <Search key={movie.id} movie={movie}/>)}
             </div>
             <div className={css.Button}>
-                <button className={css.btn} onClick={handlePagePrev} disabled={pageQuery === '1'}> prev&lt; </button>
-                <span> Page:{pageQuery}</span>
-                <button className={css.btn} onClick={handlePageNext} disabled={pageQuery === `${allPages}`}> next&gt; </button>
+                <button className={css.btn} onClick={handlePagePrev} disabled={+`${pageQuery}` === 1}> prev&lt; </button>
+                <span> {pageQuery} page of {totalPages}</span>
+                <button className={css.btn} onClick={handlePageNext} disabled={pageQuery === `${totalPages}`}> next&gt; </button>
             </div>
         </div>
     );
